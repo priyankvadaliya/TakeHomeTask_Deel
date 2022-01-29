@@ -1,0 +1,1 @@
+export { default as CreatenewContract } from "./CreatenewContract";
