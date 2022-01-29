@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-29T12:11:04.888Z",
+    "end": "2022-01-29T12:11:56.523Z",
+    "duration": 46456,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "eec339f5-88d8-4cda-aacc-865e87c0ad7d",
+      "title": "",
+      "fullFile": "cypress/integration/Fix Rate Contract/FixRateContract_Spec.js",
+      "file": "cypress/integration/Fix Rate Contract/FixRateContract_Spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a2d19c4d-f5d2-4480-b155-6bc4ba1818ea",
+          "title": "Create Fix Contract",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify the User can Create Fixed Rate Contract",
+              "fullTitle": "Create Fix Contract Verify the User can Create Fixed Rate Contract",
+              "timedOut": null,
+              "duration": 46456,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const createAContract = new _CreatenewContract.default();\ncy.xpath(createAContract.CreateNewContractLink).should(\"be.visible\").click(); //Verify the user now on Contract type Page\ncy.xpath(createAContract.COntractTypeHeading).should(\"be.visible\");\ncy.xpath(createAContract.FixedRateBanner).should(\"be.visible\").click(); ///Creating a fixed contract related input fields\ncy.generate_random_string(10).then(result => {\n  cy.xpath(createAContract.ContractName).should(\"be.visible\").type(result);\n  cy.xpath(createAContract.Contractortaxresidence).should(\"be.visible\").type('algeria{enter}');\n  cy.xpath(createAContract.JobTitle).should(\"be.visible\").type('Manitoba{enter}');\n  cy.xpath(createAContract.Senioritylevel).should(\"be.visible\").type('Not Applicable{enter}');\n  cy.xpath(createAContract.ScopeofWork).should(\"be.visible\").type(result);\n});\ncy.xpath(createAContract.NextBtn).should(\"be.visible\").click();\ncy.xpath(createAContract.Currency).should(\"be.visible\").type('GBP - British Pound{enter}');\ncy.xpath(createAContract.Rate).should(\"be.visible\").type(1000);\ncy.xpath(createAContract.PaymentFequence).should(\"be.visible\").type('Weekly{enter}');\ncy.xpath(createAContract.NextBtn).should(\"be.visible\").click();\ncy.xpath(createAContract.NextBtn).should(\"be.visible\").click();\ncy.xpath(createAContract.Addaspecialclause).should(\"be.visible\").click(); // adding Random Comment\ncy.generate_random_string(40).then(result => {\n  cy.xpath(createAContract.SpecialClauseTextArea).should(\"be.visible\").type(result);\n});\ncy.xpath(createAContract.NextBtn).should(\"be.visible\").click();\ncy.xpath(createAContract.Createcontract).should(\"be.visible\").click();\ncy.xpath(createAContract.Reviewandsign).should(\"be.visible\");",
+              "err": {},
+              "uuid": "4abccc66-b3a1-49b0-9ce0-e2e67d1144d6",
+              "parentUUID": "a2d19c4d-f5d2-4480-b155-6bc4ba1818ea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4abccc66-b3a1-49b0-9ce0-e2e67d1144d6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 46456,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

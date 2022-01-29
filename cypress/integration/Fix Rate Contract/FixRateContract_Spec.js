@@ -7,7 +7,7 @@ describe("Create Fix Contract", () => {
     afterEach(() => {
         cy.logout();
     });
-    it("Verify the User can Fixed Rate Contract", () => {
+    it("Verify the User can Create Fixed Rate Contract", () => {
     const createAContract = new CreatenewContract();
 
     cy.xpath(createAContract.CreateNewContractLink).should("be.visible").click();

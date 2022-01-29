@@ -1,0 +1,32 @@
+{
+  "name": "takehometask_deel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "pretest": "npm run clean:reports",
+    "scripts": "cypress run",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "test": "npm run scripts || npm run posttest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyankvadaliya/TakeHomeTask_Deel.git"
+  },
+  "author": "Priyank Vadaliya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priyankvadaliya/TakeHomeTask_Deel/issues"
+  },
+  "homepage": "https://github.com/priyankvadaliya/TakeHomeTask_Deel#readme",
+  "devDependencies": {
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha": "^9.2.0",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1"
+  }
+}

@@ -13,12 +13,26 @@
     "viewportWidth": 1280,
     "viewportHeight": 1024,
     "chromeWebSecurity": false,
+	"reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+            "reportDir": "cypress/reports/mocha",
+            "quite": true,
+            "overwrite": false,
+            "html": false,
+            "json": true
+        }
+    },
     "env": {
         "DefaultUser": "rojixik294@icesilo.com",
-        "DefaultPassword": "tESTING@1234"
+        "DefaultPassword": "tESTING@1234",
+		"allureResultsPath": "cypress/Results",
+        "tmsPrefix": "https://url-to-bug-tracking-system/task-",
+        "issuePrefix": "https://url-to-tms/tests/caseId-"
     },
     "retries": {
-        "runMode": 0,
+        "runMode": 1,
         "openMode": 0
     }
 }

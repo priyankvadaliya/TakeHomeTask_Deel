@@ -17,3 +17,4 @@
 import './commands'
 import 'cypress-react-selector';
 require("cypress-xpath");
+require('@shelex/cypress-allure-plugin');
